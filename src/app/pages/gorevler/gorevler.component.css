@@ -1,0 +1,135 @@
+.gorevler-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Görev Ekleme Formu */
+.gorev-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.gorev-form input,
+.gorev-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.gorev-form button {
+  padding: 10px 18px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gorev-form button:hover {
+  background-color: #125a9c;
+}
+
+/* Filtreleme Alanı */
+.filtre-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtre-container label {
+  font-weight: 500;
+}
+
+.filtre-container select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.temizle-btn {
+  padding: 8px 14px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.temizle-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Görev Listesi */
+.gorev-listesi {
+  list-style: none;
+  padding: 0;
+}
+
+.gorev-listesi li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.gorev-ad {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.tamamlandi .gorev-ad {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.kategori-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: white;
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+
+.kategori-badge.iş {
+  background-color: #1976d2;
+}
+
+.kategori-badge.okul {
+  background-color: #4caf50;
+}
+
+.kategori-badge.kişisel {
+  background-color: #ff9800;
+}
+
+.sil-btn {
+  background: none;
+  color: red;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.sil-btn:hover {
+  text-decoration: underline;
+}

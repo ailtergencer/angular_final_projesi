@@ -1,0 +1,46 @@
+<div class="gorevler-container">
+  <h2>Görev Listesi</h2>
+
+  <!-- Görev Ekleme Alanı -->
+  <div class="gorev-form">
+    <input type="text" [(ngModel)]="yeniGorev.ad" placeholder="Görev adı" />
+    <select [(ngModel)]="yeniGorev.kategori">
+      <option value="">Kategori Seç</option>
+      <option *ngFor="let kategori of kategoriler" [value]="kategori">
+        {{ kategori | titlecase }}
+      </option>
+    </select>
+    <button (click)="gorevEkle()">Ekle</button>
+  </div>
+
+  <!-- Kategoriye Göre Filtreleme Alanı -->
+  <div class="filtre-container">
+    <label for="kategori">Kategoriye Göre Filtrele:</label>
+    <select id="kategori" [(ngModel)]="secilenKategori">
+      <option value="">Tüm Kategoriler</option>
+      <option *ngFor="let kategori of kategoriler" [value]="kategori">
+        {{ kategori | titlecase }}
+      </option>
+    </select>
+    <button class="temizle-btn" (click)="secilenKategori = ''">Temizle</button>
+  </div>
+
+  <!-- Görev Listesi -->
+  <ul class="gorev-listesi">
+    <li
+      *ngFor="let gorev of filtrelenmisGorevler"
+      [class.tamamlandi]="gorev.tamamlandi"
+    >
+      <input
+        type="checkbox"
+        [checked]="gorev.tamamlandi"
+        (change)="gorevDurumDegistir(gorev)"
+      />
+      <span class="gorev-ad">{{ gorev.ad }}</span>
+      <span class="kategori-badge" [ngClass]="gorev.kategori">{{
+        gorev.kategori
+      }}</span>
+      <button class="sil-btn" (click)="gorevSil(gorev.id)">Sil</button>
+    </li>
+  </ul>
+</div>
